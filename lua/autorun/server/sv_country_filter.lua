@@ -60,10 +60,10 @@ do
 
     function IsAllowedCountry( country, invert )
         if (invert) then
-            return not (blacklist[ country ] or false)
+            return (blacklist[ country ] or false)
         end
 
-        return blacklist[ country ] or false
+        return not (blacklist[ country ] or false)
     end
 
     concommand.Add( "view_cf_blacklist", function( ply )
